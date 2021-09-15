@@ -17,7 +17,6 @@ const reducer = (state = INITIAL_STATE, action) => {
         case CartTypes.REMOVE_TO_CART:
             return produce(state, (draft) => {
                 const { payload: id } = action;
-
                 draft.data = draft.data.filter((product) => product.id !== id);
             });
 
