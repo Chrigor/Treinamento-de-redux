@@ -12,17 +12,13 @@ const reducer = (state = INITIAL_STATE, action) => {
             return produce(state, (draft) => {
                 const { payload } = action;
                 draft.data.push(payload);
-                draft.loading = true;
-                draft.error = false;
             });
 
         case CartTypes.REMOVE_TO_CART:
             return produce(state, (draft) => {
                 const { payload: id } = action;
-                draft.data = draft.data.filter((product) => product.id !== id)
 
-                draft.loading = false;
-                draft.error = false;
+                draft.data = draft.data.filter((product) => product.id !== id);
             });
 
         default:
